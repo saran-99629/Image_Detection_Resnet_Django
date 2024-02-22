@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImageDetection</title>
+    {%load static %}
+</head>
+<body>
+    <style>
+        *{
+            background-color: black;
+        }
+        .img{
+            width: 200px;
+            height: 200px;
+        }
+        .head1{
+            color:  rgb(100, 175, 82);
+            margin-up: 5px;
+        }
+        .head{
+            color: rgb(100, 175, 82);
+            margin-top: px;
+        }
+        .inp{
+            margin: 10px;
+            color: gold;
+            padding: 5px;
+            border-width: 2px;
+            border-style: double;
+            border-color: rgb(36, 49, 17);
+        }
+        .sub{
+            margin: 10px;
+            border: 10px;
+            padding:5px;
+            color: goldenrod;
+            border-width: 2px;
+            border-style: double;
+            border-color:yellowgreen;
+        }
+        .hr{
+            color: violet;
+        }
+    </style>
+    <center><img class="img" src="{% static 'webapp/img.jpg' %}" alt=""></center>
+    <center><h1 class="head1">Image Detection</h1></center>
+    <center><h2 class='head'>Upload Your Image</h2></centre>
+        
+    <form action="imageprocess"  method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <center><input class="inp" id="image"  type="file" name="image"></center>
+        <center><input class="sub" type="submit" value="Submit"></center>
+
+    </form>
+</body>
+</html>

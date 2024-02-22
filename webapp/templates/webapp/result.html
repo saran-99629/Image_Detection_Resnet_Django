@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    {% load static %}
+</head>
+<body>
+    <style>
+        *{
+            background-color: rgb(14, 14, 14);
+        }
+        .image{
+            width: 200px;
+            height: 200px;
+            
+        }
+        .head1{
+            color: rgb(255, 255, 255);
+        }
+        .head2{
+            color: rgb(168, 223, 223);
+        }
+        .container{
+            color: whitesmoke;
+            padding: 20px;
+            font-size: large;
+            font-weight: 200;
+            
+        }
+        .link{
+            text-decoration: none;
+            color: white;
+            padding: 2px;
+            border: double 2px rgb(90, 138, 138);
+            margin: 2px;
+        }
+    </style>
+
+    <center><img src="{% static 'webapp/result.jpg' %}" alt="" class="image">></center>
+    <center><h1 class="head1">IS THIS WHAT YOU UPLOADED?</h1></center>
+    <center><h1 class="head2">Prediction</h1></center>
+   
+<center><div class="container">
+{% for r,p in res %}
+    {{r}}{{p}}%<br/>
+{% endfor %}
+</center>
+<center><a class="link"  href="{% url 'index'%}">home</a></center>
+</div>
+</body>
+</html>
